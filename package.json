@@ -1,16 +1,16 @@
 {
-  "name": "wp-excellent-starter",
+  "name": "wp-excellent",
   "version": "1.0.0",
   "engines": {
     "node": "16.x"
   },
-  "description": "WP starter based on workflow for Cube CSS, Every Layout, Design Tokens and Tailwind for uitility",
+  "description": "WP starter based on workflow for Cube CSS, Every Layout, Design Tokens and Tailwind for uitility, based on the concepts explained in https://buildexcellentwebsit.es",
   "main": ".eleventy.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/madrilene/wp-excellent-starter"
+    "url": "https://github.com/madrilene/wp-excellent"
   },
-  "text_domain": "wp-excellent-starter",
+  "text_domain": "wp-excellent",
   "keywords": [],
   "author": "Lene Saile",
   "author_uri": "https://www.lene.dev",
