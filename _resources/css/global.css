@@ -1,0 +1,35 @@
+/* base */
+
+@import "tailwindcss/base";
+
+@import "global/reset.css";
+@import "global/fonts.css";
+
+@import "tailwindcss/components";
+
+@import "global/variables.css";
+@import "global/global-styles.css";
+
+/* blocks */
+
+@import "blocks/button.css";
+@import "blocks/card.css";
+@import "blocks/curve.css";
+@import "blocks/features.css";
+@import "blocks/prose.css";
+@import "blocks/section.css";
+@import "blocks/signoff.css";
+@import "blocks/site-foot.css";
+
+/* compositions */
+
+@import "compositions/grid.css";
+@import "compositions/sidebar.css";
+
+/* utilities */
+
+@import "utilities/flow.css";
+@import "utilities/region.css";
+@import "utilities/wrapper.css";
+
+@import "tailwindcss/utilities";
