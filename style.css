@@ -4,5 +4,8 @@ Author: Lene Saile
 Author URI: https://lene.dev
 Description: WP starter based on workflow for Cube CSS, Every Layout, Design Tokens and Tailwind for uitility
 Version: 1.0.0
-Text Domain: wpexcellent
+Text Domain: wp-excellent
+
+All styles are defined in a modern workflow and exported to css/glocal.css
+
 */

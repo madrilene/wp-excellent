@@ -34,14 +34,12 @@ npm run production
 ## Credits
 
 **Andy Bell**
-
 His CSS methodology and ideas in gerneal make sense to me. Has recently published an approach that incorporates Tailwind CSS into his methodology.
 
 - https://cube.fyi/
 - https://buildexcellentwebsit.es/
 
 **Heydon Pickering**
-
 I strongly orientate myself on Heydon's approaches and love his books.
 
 - https://every-layout.dev/
@@ -52,6 +50,10 @@ I strongly orientate myself on Heydon's approaches and love his books.
 - https://tailwindcss.com/
 
 ## Logbook
+
+### 22-07-26
+
+Tried finding a good combination of automatic style formatting respecting the PHP Wordpress standards and failed. Now using a half-manual config of Prettier.
 
 ### 22-07-25
 

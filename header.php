@@ -1,8 +1,19 @@
+<?php
+/**
+ * The header.
+ *
+ * Template that displays all of the <head> section. #main is opened here and closed in footer.php.
+ *
+ * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
+ *
+ * @package wp-excellent
+ */
+?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 
 <head>
-  <meta charset="<?php bloginfo( 'charset' ); ?>">
+  <meta charset="<?php bloginfo('charset'); ?>">
   <meta name="viewport"
         content="width=device-width">
 
@@ -12,7 +23,7 @@
   <link rel="profile"
         href="http://gmpg.org/xfn/11">
   <link rel="pingback"
-        href="<?php bloginfo( 'pingback_url' ); ?>">
+        href="<?php bloginfo('pingback_url'); ?>">
   <link rel="icon"
         href="<?php echo get_template_directory_uri(); ?>/favicon.ico"
         sizes="any">
@@ -27,7 +38,7 @@
   <?php wp_head(); ?>
 </head>
 
-<body <?php body_class( 'bg-white' ); ?>>
+<body <?php body_class('bg-white'); ?>>
 
   <a href="#main"
      class="skip-link"> JUMP </a>
@@ -35,20 +46,24 @@
 
   <header>
 
-    <?php get_template_part( 'template-parts/menus/secondary' ); ?>
+    <?php get_template_part('template-parts/menus/secondary'); ?>
 
     <div class="relative">
       <figure class="flex">
         <!-- logo -->
-        <a href="<?php echo get_bloginfo( 'url' ); ?>">
+        <a href="<?php echo get_bloginfo('url'); ?>">
 
           <img class="lg:hidden"
-               src="<?php  bloginfo('template_directory')  ?>/assets/images/logo/logo-mobile.svg"
+               src="<?php bloginfo(
+                       'template_directory'
+               ); ?>/assets/images/logo/logo-mobile.svg"
                alt="Logo mobile"
                width="401"
                height="183">
           <img class="hidden lg:block"
-               src="<?php bloginfo('template_directory')  ?>/assets/images/logo/logo-desktop.svg"
+               src="<?php bloginfo(
+                       'template_directory'
+               ); ?>/assets/images/logo/logo-desktop.svg"
                alt="Logo Desktop"
                width="177"
                height="128">
@@ -90,8 +105,13 @@
     </button>
 
 
-    <div class="block md:hidden"> <?php get_template_part( 'template-parts/menus/main', 'mobile' ); ?></div>
-    <div class="hidden md:block"> <?php get_template_part( 'template-parts/menus/main' ); ?></div>
+    <div class="block md:hidden"> <?php get_template_part(
+            'template-parts/menus/main',
+            'mobile'
+    ); ?></div>
+    <div class="hidden md:block"> <?php get_template_part(
+            'template-parts/menus/main'
+    ); ?></div>
 
 
   </header>

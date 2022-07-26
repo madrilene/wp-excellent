@@ -1,10 +1,24 @@
-</main>
+<?php
+/**
+ * The template for displaying the footer
+ *
+ * #main is opened in header and closed here.
+ *
+ * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
+ *
+ * @package wp-excellent
+ */
+?>
 
+
+</main>
 <footer id="colophon"
         role="contentinfo"
         class="site-foot">
 
-  <p>By <a href="https://pwww.lene.dev">Lene Saile</a>
+
+
+  <p>By <a href="https://www.lene.dev">Lene Saile</a>
   </p>
 
 </footer>

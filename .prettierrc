@@ -1,0 +1,10 @@
+{
+  "extends": "@wordpress/prettier-config",
+  "printWidth": 80,
+  "singleQuote": true,
+  "bracketSpacing": true,
+  "quoteProps": "consistent",
+  "trailingComma": "none",
+  "arrowParens": "avoid",
+  "tabWidth": 8
+}
