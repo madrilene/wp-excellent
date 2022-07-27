@@ -1,0 +1,38 @@
+.site-head {
+	--site-head-space: 1rem;
+	line-height: 1;
+	position: sticky;
+	top: 0;
+	z-index: 10;
+	padding-bottom: var(--space-m-l);
+	overflow: hidden;
+}
+.site-head .inner {
+	padding-top: var(--space-xs-s);
+	padding-bottom: var(--space-xs-s);
+	border-bottom: 2px solid;
+	background: var(--color-light);
+}
+.site-head .brand {
+	transform: translateY(10px);
+}
+
+.site-head svg {
+	height: 4ex;
+}
+
+.site-head .navbar {
+	line-height: 1;
+	font-weight: 900;
+	margin-top: -1rem;
+	margin-inline-start: -1rem;
+}
+
+.site-head .navlist {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.site-head .navlist > * {
+	padding-inline-start: var(--space-s-m);
+}

@@ -21,13 +21,12 @@ get_header(); ?>
 	the_post(); ?>
 
 <article id="post-<?php the_ID(); ?>"
-         <?php post_class('region spot-color-secondary'); ?>>
+         <?php post_class('region'); ?>>
   <div class="wrapper flow prose ">
-    <h1>wp-excellent-starter — <span class="wpexcellent-version"></span></h1>
-    <p>This starter for Wordpress is based on the workflow to build flexible front-ends, as described in <a
-         href="https://buildexcellentwebsit.es/">buildexcellentwebsit.es</a> by Andy Bell.
+    <h1> <?php the_title(); ?></h1>
 
-    <p>Modify index.php and the files in the src folder to start creating your theme! Have fun!</p>
+    <?php the_content(); ?>
+
   </div>
 </article>
 

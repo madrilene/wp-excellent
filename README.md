@@ -51,6 +51,10 @@ I strongly orientate myself on Heydon's approaches and love his books.
 
 ## Logbook
 
+### 22-07-27
+
+some updates and some new style files. Layout now looking ok. new screenshot.
+
 ### 22-07-26
 
 Tried finding a good combination of automatic style formatting respecting the PHP Wordpress standards and failed. Now using a half-manual config of Prettier.

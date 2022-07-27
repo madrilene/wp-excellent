@@ -1,0 +1,6 @@
+.skip-link {
+	position: absolute;
+	top: var(--space-s-m);
+	left: var(--space-s-m);
+	z-index: 1;
+}

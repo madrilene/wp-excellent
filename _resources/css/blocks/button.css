@@ -1,1 +1,10 @@
-/* A blank block because there is *always* a button */
+.button {
+	display: inline-block;
+	border: 2px solid var(--color-dark);
+	background: var(--color-primary);
+	color: var(--color-dark);
+	border-radius: 50%;
+	line-height: 1;
+	padding: var(--space-s-m) var(--space-m-l);
+	text-decoration: none;
+}
