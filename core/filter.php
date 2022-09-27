@@ -9,6 +9,7 @@
  * @package wp-excellent
  */
 
+// ------------------------------------------------ theme manipulation filter
 
  /**
   * Change the read more link for excerpts
@@ -26,3 +27,20 @@ function read_more_link( $read_more_text ) {
 	return $new_read_more;
 }
 add_filter( 'excerpt_more', 'read_more_link', 20 );
+
+
+
+function modify_menu( $string ) {
+
+	$string = str_replace( 'Hello', 'ohyeah!', $string );
+	return $string;
+}
+
+add_filter( 'wp_nav_menu_items', 'modify_menu', 20 );
+
+
+
+
+
+
+// ------------------------------------------------ admin manipulation filter
