@@ -8,9 +8,9 @@
 
 ?>
 
-<div class="site-head">
+<header class="site-head">
 <div class="inner splitter wrapper headarea">
 <?php get_template_part( 'template-parts/header/site', 'branding' ); ?>
 <?php get_template_part( 'template-parts/header/site', 'nav' ); ?>
 </div>
-</div>
+</header>

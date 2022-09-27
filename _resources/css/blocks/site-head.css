@@ -21,22 +21,6 @@
 	height: 4ex;
 }
 
-/* .site-head .navbar {
-	line-height: 1;
-	font-weight: 900;
-	margin-top: -1rem;
-	margin-inline-start: -1rem;
-}
-
-.site-head .navlist {
-	display: flex;
-	flex-wrap: wrap;
-}
-
-.site-head .navlist > * {
-	padding-inline-start: var(--space-s-m);
-} */
-
 /* menu styles. TODO: must refactor to completely rely on my design tokens. */
 
 @media (min-width: 48em) {

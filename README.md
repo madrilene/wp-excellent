@@ -57,6 +57,10 @@ I strongly orientate myself on Heydon's approaches and love his books.
 
 ## Logbook
 
+### 22-09-27
+
+Updated menu and other files.
+
 ### 22-07-27
 
 some updates and some new style files. Layout now looking ok. new screenshot.

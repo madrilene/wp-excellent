@@ -15,24 +15,28 @@
 
 get_header(); ?>
 
-<?php if (have_posts()): ?>
+<?php if ( have_posts() ) : ?>
 
-<?php while (have_posts()):
-	the_post(); ?>
+	<?php
+	while ( have_posts() ) :
+		the_post();
+		?>
 
 <article id="post-<?php the_ID(); ?>"
-         <?php post_class('region'); ?>>
+			 <?php post_class( '' ); ?>>
   <div class="wrapper flow prose ">
-    <h1> <?php the_title(); ?></h1>
+	<h1> <?php the_title(); ?></h1>
 
-    <?php the_content(); ?>
+		<?php the_content(); ?>
 
   </div>
 </article>
 
-<?php
-endwhile; ?>
+		<?php
+endwhile;
+	?>
 
 <?php endif; ?>
 
-<?php get_footer();
+<?php
+get_footer();

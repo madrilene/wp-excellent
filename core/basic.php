@@ -96,3 +96,18 @@ function asset( $path ) {
 	}
 	return add_query_arg( 'time', time(), get_stylesheet_directory_uri() . '/' . $path );
 }
+
+
+// get all includes
+
+// acf stuff
+require get_template_directory() . '/core/inc/acf.php';
+
+// Custom template tags for the theme.
+require get_template_directory() . '/core/inc/template-tags.php';
+
+// Block Patterns.
+require get_template_directory() . '/core/inc/block-patterns.php';
+
+// Block Styles.
+require get_template_directory() . '/core/inc/block-styles.php';
