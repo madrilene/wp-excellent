@@ -1,47 +1,48 @@
 {
-  "name": "wp-excellent",
-  "version": "1.0.0",
-  "engines": {
-    "node": "16.x"
-  },
-  "description": "WP starter based on workflow for Cube CSS, Every Layout, Design Tokens and Tailwind for uitility, based on the concepts explained in https://buildexcellentwebsit.es",
-  "main": ".eleventy.js",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/madrilene/wp-excellent"
-  },
-  "text_domain": "wp-excellent",
-  "keywords": [],
-  "author": "Lene Saile",
-  "author_uri": "https://www.lene.dev",
-  "license": "MIT",
-  "scripts": {
-    "css": "npx postcss _resources/css/global.css -o css/global.css",
-    "js": "esbuild --bundle _resources/js/app.js --outfile=js/app.js",
-    "browser-sync": "browser-sync start --proxy \"codeabletest.local\" --host=\"codeabletest.local\" --no-inject-changes --files=\"./\"",
-    "start": "cross-env NODE_ENV=development concurrently \"npm run browser-sync\" \"npm run css -- --watch\" \"npm run js -- --watch\"",
-    "production": "cross-env NODE_ENV=production concurrently \"npm run css -- --postcss --minify \" \"npm run js -- --minify\""
-  },
-  "dependencies": {
-    "concurrently": "^6.2.1",
-    "cssnano": "^5.1.7",
-    "postcss": "^8.4.8",
-    "postcss-cli": "^9.1.0",
-    "postcss-import": "^14.0.2",
-    "postcss-import-ext-glob": "^2.0.1",
-    "postcss-js": "^4.0.0",
-    "slugify": "^1.6.5",
-    "tailwindcss": "^3.0.23"
-  },
-  "devDependencies": {
-    "@prettier/plugin-php": "^0.18.9",
-    "@wordpress/eslint-plugin": "^12.7.0",
-    "@wordpress/prettier-config": "^1.4.0",
-    "browser-sync": "^2.27.10",
-    "cpy": "^9.0.1",
-    "cross-env": "^7.0.3",
-    "esbuild": "^0.14.50",
-    "eslint": "^8.20.0",
-    "prettier": "npm:wp-prettier@^2.6.2"
-  }
+	"name": "wp-excellent",
+	"local": "wpexcellent.local",
+	"version": "1.0.0",
+	"engines": {
+		"node": "16.x"
+	},
+	"description": "WP starter based on workflow for Cube CSS, Every Layout, Design Tokens and Tailwind for uitility, based on the concepts explained in https://buildexcellentwebsit.es",
+	"main": ".eleventy.js",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/madrilene/wp-excellent"
+	},
+	"text_domain": "wp-excellent",
+	"keywords": [],
+	"author": "Lene Saile",
+	"author_uri": "https://www.lene.dev",
+	"license": "MIT",
+	"scripts": {
+		"css": "npx postcss _resources/css/global.css -o css/global.css",
+		"js": "esbuild --bundle _resources/js/app.js --outdir=js --platform=node --tree-shaking=true",
+		"browser-sync": "browser-sync start --proxy \"wpexcellent.local\" --host=\"wpexcellent.local\" --no-inject-changes --files=\"./\"",
+		"start": "cross-env NODE_ENV=development concurrently \"npm run browser-sync\" \"npm run css -- --watch\" \"npm run js -- --watch\"",
+		"production": "cross-env NODE_ENV=production concurrently \"npm run css -- --postcss --minify \" \"npm run js -- --minify\""
+	},
+	"dependencies": {
+		"concurrently": "^6.2.1",
+		"cssnano": "^5.1.7",
+		"postcss": "^8.4.8",
+		"postcss-cli": "^9.1.0",
+		"postcss-import": "^14.0.2",
+		"postcss-import-ext-glob": "^2.0.1",
+		"postcss-js": "^4.0.0",
+		"slugify": "^1.6.5",
+		"tailwindcss": "^3.0.23"
+	},
+	"devDependencies": {
+		"@wordpress/eslint-plugin": "^12.7.0",
+		"autoprefixer": "^10.4.7",
+		"browser-sync": "^2.27.10",
+		"cpy": "^9.0.1",
+		"cross-env": "^7.0.3",
+		"esbuild": "^0.14.50",
+		"eslint": "^8.20.0",
+		"prettier": "npm:wp-prettier@^2.6.2",
+		"swiper": "^8.3.2"
+	}
 }

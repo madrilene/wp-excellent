@@ -1,23 +1,29 @@
 # wp-excellent
 
-This is my developer profile. It's built with Eleventy, Javascript and CSS. Based on my personal opiniated Eleventy Starter for client projects, it still brings a lot of preconfigurations I'll have to strip out. It is quite over-engineered considering the simplicity of the page.
-This is also where I try new stuff, so things might be a little inconsistent and verbose.
+My current starter theme for WordPress is called _excellent_, not because I consider it to be excellent 🙃, but because it is based on the workflow suggested by Andy Bell's https://buildexcellentwebsit.es/.
 
+## Contents
+
+- [Editor workflow](#editor-workflow)
 - [Using this](#using-this)
 - [Credits](#credits)
-- [Logbook](#logbook)
+
+## Editor workflow
+
+...
 
 ## Using this
 
 ### Install dependencies
 
 ```
-npm install
+- npm install
+- composer install
 ```
 
 ### Working locally
 
-Creates a dev server via browser-sync which then points to the domain created by local by flywheel. Must be edited in package.json.
+Creates a dev server (browser-sync) with hot reload on localhost:3000, pointing to the domain created by local by flywheel. Must be edited in package.json.
 
 ```
 npm start
@@ -34,7 +40,7 @@ npm run production
 ## Credits
 
 **Andy Bell**
-His CSS methodology and ideas in gerneal make sense to me. Has recently published an approach that incorporates Tailwind CSS into his methodology.
+His CSS methodology and ideas in gerneal make sense to me. He recently published an approach that incorporates Tailwind CSS into his methodology.
 
 - https://cube.fyi/
 - https://buildexcellentwebsit.es/

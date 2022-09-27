@@ -1,31 +1,34 @@
 <?xml version="1.0"?>
-<ruleset name="Pivotal Agency">
-    <description>Pivotal Wordpress Coding Standards</description>
+<ruleset>
+	<arg name="basepath" value="."/>
+	<arg name="extensions" value="php"/>
+	<arg name="severity" value="4"/>
+	<arg name="tab-width" value="4"/>
+	<arg name="parallel" value="80"/>
+	<arg name="cache" value=".phpcs-cache"/>
+	<arg name="colors"/>
 
-    <!-- Scan all files in directory -->
-    <file>.</file>
+	<exclude-pattern>*/.git/*</exclude-pattern>
+	<exclude-pattern>.github/</exclude-pattern>
+	<exclude-pattern>*/vendor/*</exclude-pattern>
+	<exclude-pattern>*/node_modules/*</exclude-pattern>
+	<exclude-pattern>*/bin/*</exclude-pattern>
 
-    <!-- Scan only PHP files -->
-    <arg name="extensions" value="php"/>
+	<config name="testVersion" value="7.4"/>
+	<config name="php_version" value="70407"/>
 
-    <!-- Show colors in console -->
-    <arg value="-colors"/>
+	<!-- Ignore warnings, show progress of the run and show sniff names -->
+	<arg value="ns"/>
 
-    <!-- Show sniff codes in all reports -->
-    <arg value="ns"/>
+  <file>.</file>
 
-    <!-- Include the WordPress-Extra standard. -->
-    <rule ref="WordPress-Extra">
-        <!-- Exclude any rules here -->
-        <exclude name="WordPress.PHP.DisallowShortTernary"/>
-    </rule>
+	<!-- Directories to be checked -->
 
-    <!-- Let's also check that everything is properly documented. -->
-    <rule ref="WordPress-Docs"/>
-
-    <!-- Add in some extra rules from other standards. -->
-    <rule ref="Generic.CodeAnalysis.UnusedFunctionParameter"/>
-    <rule ref="Generic.Commenting.Todo"/>
-
-    <config name="minimum_supported_wp_version" value="4.9"/>
+	<!-- WordPress -->
+  <rule ref="WordPress">
+      <properties>
+         <property name="text_domain" type="array" value="wp-excellent" />
+      </properties>
+   </rule>
+	<rule ref="PSR2.Methods.FunctionClosingBrace"/>
 </ruleset>

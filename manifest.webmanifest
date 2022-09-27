@@ -1,0 +1,16 @@
+{
+	"name": "WP Excellent Theme Starter",
+	"short_name": "wpexcellent",
+	"theme_color": "#FFD000",
+	"background_color": "#FFD000",
+	"start_url": "#",
+	"icons": [
+		{
+			"src": "#/favicon-maskable.png",
+			"sizes": "512x512",
+			"type": "image/png",
+			"purpose": "maskable"
+		}
+	],
+	"display": "standalone"
+}

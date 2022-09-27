@@ -13,11 +13,12 @@
 
 </main>
 <footer id="colophon"
-        role="contentinfo"
-        class="site-foot">
+		role="contentinfo"
+		class="site-foot">
 
-  <p>By <a href="https://www.lene.dev">Lene Saile</a>
-  </p>
+
+
+  <?php get_template_part( 'template-parts/footer/footer', 'credit' ); ?>
 
 </footer>
 
