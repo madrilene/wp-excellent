@@ -10,17 +10,15 @@
  */
 ?>
 
-
 </main>
+
 <footer id="colophon"
 		role="contentinfo"
 		class="site-foot">
 
 		<div class=" splitter wrapper">
 
-  <?php get_template_part( 'template-parts/footer/footer', 'credit' ); ?>
-
-	<ul class="stuff-goes-here">asdf</ul>
+			<?php get_template_part( 'template-parts/footer/footer', 'credit' ); ?>
 
 	</div>
 

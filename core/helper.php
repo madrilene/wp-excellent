@@ -52,3 +52,24 @@ add_action(
 		wp_dequeue_script( 'comment-reply' );
 	}
 );
+
+// Add custom login form logo.
+add_action(
+	'login_head',
+	function () {
+		$url   = get_theme_file_uri( 'favicon.svg' );
+		$width = 200;
+
+		$styles = array(
+			sprintf( 'background-image: url(%s);', $url ),
+			sprintf( 'width: %dpx;', $width ),
+			'background-position: center;',
+			'background-size: contain;',
+		);
+
+		echo sprintf(
+			'<style> .login h1 a { %s } </style>',
+			implode( '', $styles )
+		);
+	}
+);

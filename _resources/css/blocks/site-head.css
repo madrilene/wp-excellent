@@ -67,16 +67,22 @@
 	visibility: var(--nav-list-visibility, visible);
 }
 
+/* animates ul only when opening to avoid flash on page load, svg always */
 @media (prefers-reduced-motion: no-preference) {
-	.site-head ul {
-		transition: transform 0.6s cubic-bezier(0.68, -0.55, 0.27, 1.55),
-			visibility 0.3s linear;
+	.site-head [aria-expanded='true'] + ul,
+	nav.navbar svg {
+		transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55),
+			visibility 0.05s linear;
 	}
 }
 
 [aria-expanded='false'] + ul {
 	transform: var(--nav-list-transform, translateX(100%));
 	visibility: var(--nav-list-visibility, hidden);
+}
+
+.site-head [aria-expanded='true'] svg {
+	transform: var(--nav-list-rotate, rotate(45deg));
 }
 
 /* Basic link styling */
@@ -106,4 +112,5 @@ button {
 	display: var(--nav-button-display, flex);
 	position: relative;
 	z-index: 1;
+	cursor: pointer;
 }

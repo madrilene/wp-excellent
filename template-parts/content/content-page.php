@@ -9,7 +9,7 @@
 
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class( 'flow' ); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class( 'wrapper flow prose' ); ?>>
 
 	<?php if ( ! is_front_page() ) : ?>
 		<header class="entry-header alignwide">
@@ -21,7 +21,7 @@
 		</header><!-- .entry-header -->
 	<?php endif; ?>
 
-	<div class="entry-content">
+
 		<?php
 		the_content();
 
@@ -34,7 +34,7 @@
 			)
 		);
 		?>
-	</div><!-- .entry-content -->
+
 
 	<?php if ( get_edit_post_link() ) : ?>
 		<footer class="entry-footer default-max-width">

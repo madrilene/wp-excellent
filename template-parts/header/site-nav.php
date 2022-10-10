@@ -27,9 +27,10 @@
 
 <template id="burger-template">
   <button type="button" aria-expanded="false" aria-label="Menu" aria-controls="primary-menu">
-	<svg width="24" height="24" aria-hidden="true">
-	  <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z">
-	</svg>
+	<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+  <path fill-rule="evenodd" d="M12 3.75a.75.75 0 01.75.75v6.75h6.75a.75.75 0 010 1.5h-6.75v6.75a.75.75 0 01-1.5 0v-6.75H4.5a.75.75 0 010-1.5h6.75V4.5a.75.75 0 01.75-.75z" clip-rule="evenodd" />
+</svg>
+
   </button>
 </template>
 

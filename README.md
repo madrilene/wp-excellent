@@ -1,6 +1,7 @@
 # wp-excellent
 
-My current starter theme for WordPress is called _excellent_, not because I consider it to be excellent 🙃, but because it is based on the workflow suggested by Andy Bell's https://buildexcellentwebsit.es/.
+Starter for classic PHP WordPress theme.
+Based on the workflow suggested by Andy Bell's https://buildexcellentwebsit.es/.
 
 ## Contents
 

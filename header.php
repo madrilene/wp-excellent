@@ -23,15 +23,15 @@ href="http://gmpg.org/xfn/11">
 <link rel="pingback"
 href="<?php bloginfo( 'pingback_url' ); ?>">
 <link rel="icon"
-href="<?php echo esc_url( get_template_directory_uri() ); ?>/favicon.ico"
+href="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/favicon/favicon.ico"
 sizes="any">
 <link rel="icon"
-href="<?php echo esc_url( get_template_directory_uri() ); ?>/favicon.svg"
+href="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/favicon/favicon.svg"
 type="image/svg+xml">
 <link rel="apple-touch-icon"
-href="<?php echo esc_url( get_template_directory_uri() ); ?>/favicon-apple-touch.png"><!-- 180×180 -->
+href="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/favicon/favicon-apple-touch.png"><!-- 180×180 -->
 <link  rel="manifest" crossorigin="use-credentials"
-href="<?php echo esc_url( get_template_directory_uri() ); ?>/manifest.webmanifest">
+href="<?php echo esc_url( get_template_directory_uri() ); ?>/site.webmanifest">
 
 <?php wp_head(); ?>
 </head>

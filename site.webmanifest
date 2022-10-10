@@ -1,0 +1,26 @@
+{
+	"name": "WP Excellent Theme Starter",
+	"short_name": "wpexcellent",
+	"theme_color": "#FFD000",
+	"background_color": "#FFD000",
+	"start_url": "#",
+	"icons": [
+		{
+			"src": "/wp-content/themes/wp-excellent/assets/images/favicon/favicon-android-chrome-192x192.png",
+			"sizes": "192x192",
+			"type": "image/png"
+		},
+		{
+			"src": "/wp-content/themes/wp-excellent/assets/images/favicon/favicon-android-chrome-512x512.png",
+			"sizes": "512x512",
+			"type": "image/png"
+		},
+		{
+			"src": "/wp-content/themes/wp-excellent/assets/images/favicon/favicon-maskable.png",
+			"sizes": "512x512",
+			"type": "image/png",
+			"purpose": "maskable"
+		}
+	],
+	"display": "standalone"
+}

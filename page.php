@@ -22,15 +22,7 @@ get_header(); ?>
 		the_post();
 		?>
 
-<article id="post-<?php the_ID(); ?>"
-			 <?php post_class( '' ); ?>>
-  <div class="wrapper flow prose ">
-	<h1> <?php the_title(); ?></h1>
-
-		<?php the_content(); ?>
-
-  </div>
-</article>
+		<?php get_template_part( 'template-parts/content/content-page' ); ?>
 
 		<?php
 endwhile;

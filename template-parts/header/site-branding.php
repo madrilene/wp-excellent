@@ -9,7 +9,8 @@
 
 <figure id="logo" class="flex">
 
-	<a class="brand" href="<?php echo esc_url( get_bloginfo( 'url' ) ); ?>">
+	<a class="brand" title="<?php echo esc_html( get_bloginfo( 'name' ) ); ?>" href="<?php echo esc_url( get_bloginfo( 'url' ) ); ?>">
+
 
 	<?php if ( function_exists( 'the_custom_logo' ) && has_custom_logo() ) : ?>
 		<?php the_custom_logo(); ?>

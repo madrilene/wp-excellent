@@ -18,7 +18,7 @@ get_header(); ?>
 <!-- delete me -->
 
 <div class="wrapper flow prose ">
-	<h1>wp-excellent-starter — <span class="wpexcellent-version"></span></h1>
+	<h1 class="gradient-text">wp-excellent-starter — <span class="wpexcellent-version"></span></h1>
 	<p>This starter for WordPress is based on the workflow to build flexible front-ends, as described in <a
 		 href="https://buildexcellentwebsit.es/">buildexcellentwebsit.es</a> by Andy Bell.
 
@@ -37,6 +37,7 @@ get_header(); ?>
 		?>
 
 		<?php get_template_part( 'template-parts/content/content', get_theme_mod( 'display_excerpt_or_full_post', 'excerpt' ) ); ?>
+
 
 <?php endwhile; ?>
 
