@@ -24,23 +24,23 @@
 		"production": "cross-env NODE_ENV=production concurrently \"npm run css -- --postcss --minify \" \"npm run js -- --minify\""
 	},
 	"dependencies": {
-		"concurrently": "^6.2.1",
+		"concurrently": "^7.5.0",
 		"cssnano": "^5.1.7",
 		"postcss": "^8.4.8",
-		"postcss-cli": "^9.1.0",
-		"postcss-import": "^14.0.2",
+		"postcss-cli": "^10.0.0",
+		"postcss-import": "^15.0.0",
 		"postcss-import-ext-glob": "^2.0.1",
 		"postcss-js": "^4.0.0",
 		"slugify": "^1.6.5",
 		"tailwindcss": "^3.0.23"
 	},
 	"devDependencies": {
-		"@wordpress/eslint-plugin": "^12.7.0",
+		"@wordpress/eslint-plugin": "^13.5.0",
 		"autoprefixer": "^10.4.7",
 		"browser-sync": "^2.27.10",
 		"cpy": "^9.0.1",
 		"cross-env": "^7.0.3",
-		"esbuild": "^0.14.50",
+		"esbuild": "^0.15.13",
 		"eslint": "^8.20.0",
 		"prettier": "npm:wp-prettier@^2.6.2",
 		"swiper": "^8.3.2"

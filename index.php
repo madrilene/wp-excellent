@@ -19,8 +19,15 @@ get_header(); ?>
 
 <div class="wrapper flow prose ">
 	<h1 class="gradient-text">wp-excellent-starter — <span class="wpexcellent-version"></span></h1>
-	<p>This starter for WordPress is based on the workflow to build flexible front-ends, as described in <a
-		 href="https://buildexcellentwebsit.es/">buildexcellentwebsit.es</a> by Andy Bell.
+	<p>This starter for WordPress is based on the workflow to build flexible front-ends, as described in <small><a
+		 href="https://buildexcellentwebsit.es/">buildexcellentwebsit.es</a></small> by Andy Bell.</p>
+
+		<p> To work with it efficiently you should be familiar with <a href="https://cube.fyi/" target="_blank" rel="noreferrer noopener">cube.fyi</a>, <a href="https://utopia.fyi/" target="_blank" rel="noreferrer noopener">utopia.fyi</a> and <a href="https://every-layout.dev/" target="_blank" rel="noreferrer noopener">every-layout.dev</a>.</p>
+<ul>
+<li>Find out more on <a href="https://buildexcellentwebsit.es/" target="_blank" rel="noreferrer noopener">https://buildexcellentwebsit.es/</a>.</li>
+<li>Remix the original: <a href="https://glitch.com/edit/#!/remix/build-excellent-websites" target="_blank" rel="noreferrer noopener">https://glitch.com/edit/#!/remix/build-excellent-websites</a></li>
+</ul>
+<p>Edit your preferences in <code>_resouces/css/design-tokens/</code>.</p>
 
 	<p>Modify index.php and the files in the src folder to start creating your theme! Have fun!</p>
 </div>

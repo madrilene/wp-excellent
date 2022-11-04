@@ -5,15 +5,22 @@ Based on the workflow suggested by Andy Bell's https://buildexcellentwebsit.es/.
 
 ## Contents
 
-- [Editor workflow](#editor-workflow)
 - [Using this](#using-this)
 - [Credits](#credits)
 
-## Editor workflow
-
-...
-
 ## Using this
+
+Edit CSS and JS in `_resources`. Fonts and images in `assets`.
+For production run production build and upload in your theme folder:
+
+- assets
+- core
+- css
+- js
+- template-parts
+- Wordpress PHP files
+- screenshot.jpg
+- style.css
 
 ### Install dependencies
 
@@ -24,7 +31,7 @@ Based on the workflow suggested by Andy Bell's https://buildexcellentwebsit.es/.
 
 ### Working locally
 
-Creates a dev server (browser-sync) with hot reload on localhost:3000, pointing to the domain created by local by flywheel. Must be edited in package.json.
+Creates a dev server (browser-sync) with hot reload on localhost:3000, pointing to the domain created by local by flywheel. The domain (eg "wpexcellent.local") Must be edited in scripts section of package.json.
 
 ```
 npm start
@@ -55,21 +62,3 @@ I strongly orientate myself on Heydon's approaches and love his books.
 **Tailwind**
 
 - https://tailwindcss.com/
-
-## Logbook
-
-### 22-09-27
-
-Updated menu and other files.
-
-### 22-07-27
-
-some updates and some new style files. Layout now looking ok. new screenshot.
-
-### 22-07-26
-
-Tried finding a good combination of automatic style formatting respecting the PHP Wordpress standards and failed. Now using a half-manual config of Prettier.
-
-### 22-07-25
-
-- created first version. still problems in utility export from tailwind

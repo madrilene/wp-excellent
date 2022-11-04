@@ -30,16 +30,6 @@ add_filter( 'excerpt_more', 'read_more_link', 20 );
 
 
 
-function modify_menu( $string ) {
-
-	$string = str_replace( 'Hello', 'ohyeah!', $string );
-	return $string;
-}
-
-add_filter( 'wp_nav_menu_items', 'modify_menu', 20 );
-
-
-
 
 
 

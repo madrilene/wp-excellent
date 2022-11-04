@@ -1,0 +1,9 @@
+code,
+pre {
+	padding: 0.125em 0.4em;
+	font-family: var(--font-mono);
+	background: var(--color-dark);
+	border-radius: var(--border-radius);
+	color: var(--color-light);
+	font-size: var(--size-step-0);
+}

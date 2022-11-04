@@ -25,6 +25,8 @@
 	);
 	?>
 
+	<!--  template element holding a button that needs to be injected when JavaScript is finally available. Source: https://web.dev/website-navigation/ -->
+
 <template id="burger-template">
   <button type="button" aria-expanded="false" aria-label="Menu" aria-controls="primary-menu">
 	<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
