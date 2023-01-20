@@ -1,9 +1,9 @@
 {
 	"name": "wp-excellent",
 	"local": "wpexcellent.local",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"engines": {
-		"node": "16.x"
+		"node": ">=16.0.0"
 	},
 	"description": "WP starter based on workflow for Cube CSS, Every Layout, Design Tokens and Tailwind for uitility, based on the concepts explained in https://buildexcellentwebsit.es",
 	"main": ".eleventy.js",
@@ -40,7 +40,7 @@
 		"browser-sync": "^2.27.10",
 		"cpy": "^9.0.1",
 		"cross-env": "^7.0.3",
-		"esbuild": "^0.15.13",
+		"esbuild": "^0.17.3",
 		"eslint": "^8.20.0",
 		"prettier": "npm:wp-prettier@^2.6.2",
 		"swiper": "^8.3.2"
