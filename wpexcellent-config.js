@@ -1,7 +1,7 @@
 // config.js
 const wpexcellentConfig = {
 	app: {
-		localDomain: 'wpexcellent.local',
+		localDomain: 'wp-excellent.local',
 	},
 };
 

@@ -6,9 +6,9 @@ window.addEventListener("load", function() {
   cards.forEach((card) => {
     card.style.cursor = "pointer";
     let down, up, link = card.querySelector("a");
-    card.onmousedown = () => down = +new Date();
+    card.onmousedown = () => down = +/* @__PURE__ */ new Date();
     card.onmouseup = () => {
-      up = +new Date();
+      up = +/* @__PURE__ */ new Date();
       if (up - down < 200) {
         link.click();
       }
