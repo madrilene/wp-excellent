@@ -9,13 +9,11 @@
  */
 
 get_header();
-
 $description = get_the_archive_description();
 ?>
 
-<?php if (have_posts()) : ?>
-
-	<div class="wrapper region flow prose">
+<div class="wrapper region flow prose">
+	<?php if (have_posts()) : ?>
 
 		<header class="flow">
 			<?php the_archive_title('<h1 class="page-title gradient-text">', '</h1>'); ?>
@@ -32,7 +30,5 @@ $description = get_the_archive_description();
 	<?php else : ?>
 		<?php get_template_part('template-parts/content/content-none'); ?>
 	<?php endif; ?>
-
-	</div>
-
-	<?php get_footer(); ?>
+</div>
+<?php get_footer(); ?>

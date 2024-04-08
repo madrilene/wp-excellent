@@ -33,9 +33,9 @@ get_header(); ?>
 
 <!-- delete me end -->
 
-<?php if (have_posts()) : ?>
+<div class="wrapper region flow prose">
 
-	<div class="wrapper region flow prose">
+	<?php if (have_posts()) : ?>
 
 		<?php while (have_posts()) : the_post();	?>
 			<?php get_template_part('template-parts/content/content', get_theme_mod('display_excerpt_or_full_post', 'excerpt')); ?>
@@ -45,6 +45,6 @@ get_header(); ?>
 		<?php get_template_part('template-parts/content/content-none'); ?>
 	<?php endif; ?>
 
-	</div>
+</div>
 
-	<?php get_footer();
+<?php get_footer();
