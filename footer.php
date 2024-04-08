@@ -1,4 +1,5 @@
 <?php
+
 /**
  * The template for displaying the footer
  *
@@ -12,13 +13,11 @@
 
 </main>
 
-<footer id="colophon"
-		role="contentinfo"
-		class="site-foot">
+<footer class="site-foot">
 
-		<div class=" splitter wrapper">
+	<div class=" wrapper">
 
-			<?php get_template_part( 'template-parts/footer/footer', 'credit' ); ?>
+		<?php get_template_part('template-parts/footer/footer', 'credit'); ?>
 
 	</div>
 
