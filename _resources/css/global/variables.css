@@ -1,11 +1,71 @@
-/* Global variables */
+/* Global variables.  */
+/* This turned out a little too complex, and probably is overly specific. I'm still fiddling with this. Should work by itself though, once you define your design token colors.
+/* Feel free to delete the modern CSS enhancements starting on line 74. Adjust fallbacks if modern color syntax not supported for text and bg variants. */
+
+/* Basic variable definitions for color schemes */
 :root {
-  --gutter: var(--space-s-m);
-  --border-radius: var(--size-step-1);
-  --transition-base: 250ms ease;
-  --transition-movement: 200ms linear;
-  --transition-fade: 200ms ease;
-  --transition-bounce: 500ms cubic-bezier(0.5, 0.05, 0.2, 1.5);
-  --tracking: -0.05ch;
-  --tracking-s: -0.075ch;
+	color-scheme: light dark;
+
+	--gutter: var(--space-m-l);
+	--border-radius: 0.3rem;
+	--transition-duration: 250ms;
+	--transition-timing: ease;
+	--wrapper-width: 85rem;
+	--tracking: -0.05ch;
+	--tracking-s: -0.075ch;
+	--tracking-wide: 0.05ch;
+
+	--gradient-rainbow: linear-gradient(
+		90deg,
+		#cf4662 10%,
+		#fbbe25 30%,
+		#62c95c 50%,
+		#08bccb 75%,
+		#a977d5 90%
+	);
+	--gradient-conic: conic-gradient(
+		var(--color-primary) 0 28%,
+		var(--color-secondary) 0 67%,
+		var(--color-tertiary) 0 100%
+	);
+	--gradient-stripes: linear-gradient(
+		45deg,
+		var(--color-base-dark) 0 75%,
+		var(--color-primary) 0 85%,
+		var(--color-secondary) 0 92%,
+		var(--color-tertiary) 0 100%
+	);
+
+	/* Default / Light theme specific variables */
+	--color-text: var(--color-base-dark);
+	--color-bg: var(--color-base-light);
+	--color-base: var(--color-base-dark);
+	--color-primary: var(--color-primary-highlight);
+	--color-secondary: var(--color-secondary-highlight);
+	--color-tertiary: var(--color-tertiary-highlight);
+	/* Fallbacks if modern color syntax not supported */
+	--color-text-accent: #505050;
+	--color-bg-accent: #fdfdfd;
+	--color-bg-accent-2: #f7f7f7;
+}
+
+/* Enhancements for browsers that support color-mix */
+@supports (background: color-mix(in srgb, red 50%, blue)) {
+	:root {
+		--color-text-accent: color-mix(
+			in oklab,
+			var(--color-base-dark) 80%,
+			var(--color-bg)
+		);
+		--color-bg-accent: color-mix(
+			in oklab,
+			var(--color-bg) 90%,
+			var(--color-text)
+		);
+		--color-bg-accent-2: color-mix(
+			in oklab,
+			var(--color-bg) 70%,
+			var(--color-text)
+		);
+	}
 }

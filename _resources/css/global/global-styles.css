@@ -4,25 +4,36 @@
   Low-specificity, global styles that apply to the whole
   project: https://cube.fyi/css.html
 */
+
 body {
-	color: var(--color-dark);
-	background: var(--color-light);
-	font-size: var(--size-step-1);
+	color: var(--color-text);
+	background-color: var(--color-bg);
+	font-size: var(--size-step-0);
 	font-family: var(--font-base);
 	line-height: 1.4;
 	letter-spacing: var(--tracking);
+	display: flex;
+	flex-direction: column;
+	font-weight: var(--font-regular);
+	accent-color: var(--color-primary);
+}
+
+main {
+	flex: auto;
 }
 
 /* Base typesetting */
 h1,
 h2,
 h3 {
-	line-height: 1;
+	line-height: 1.2;
 	letter-spacing: var(--tracking-s);
+	font-weight: var(--font-bold);
+	font-family: var(--font-display);
 }
 
 h1 {
-	font-size: var(--size-step-5);
+	font-size: var(--size-step-6);
 }
 
 h2 {
@@ -30,39 +41,49 @@ h2 {
 }
 
 h3 {
-	font-size: var(--size-step-3);
+	font-size: var(--size-step-2);
 }
 
 /* Set line lengths */
 p,
 li,
 blockquote:not([class]) {
-	max-width: 50ch;
+	max-inline-size: 65ch;
 }
 
-h1,
-h2,
-h3 {
-	max-width: 20ch;
-}
-
-/* More generic elements */
-blockquote:not([class]) {
-	font-family: var(--font-serif);
+blockquote {
+	border-inline-start: 0.5rem solid var(--color-primary);
+	padding: var(--space-m-l);
 	font-size: var(--size-step-2);
 }
 
-/* Markdown blockquuote:not([class])s aren't ideal, so we're presuming the person quoted is the last p */
-blockquote:not([class]) p:last-of-type {
+blockquote > * + * {
+	margin-block-start: var(--space-m-l);
+}
+
+blockquote :last-child {
 	font-family: var(--font-base);
+	font-style: normal;
 	font-size: var(--size-step-1);
-	font-weight: normal;
 }
 
 svg {
-	height: 2ex;
-	width: auto;
+	block-size: 2ex;
+	inline-size: auto;
 	flex: none;
+}
+
+strong {
+	font-weight: var(--font-extra-bold);
+}
+
+hr {
+	border: 0;
+	height: 1px;
+	width: 10%;
+	margin-block: var(--space-m-l);
+	margin-inline-start: 0;
+	background-color: var(--color-bg-accent-2);
 }
 
 [role='list'] {
@@ -73,19 +94,16 @@ svg {
 
 a {
 	color: currentcolor;
+	text-decoration-thickness: 0.08em;
 }
 
 a:hover {
 	text-decoration: none;
 }
 
-:focus {
-	outline: 2px solid;
+:focus-visible {
+	outline: 3px solid;
 	outline-offset: 0.3ch;
-}
-
-:target {
-	scroll-margin-top: 2ex;
 }
 
 main:focus {
@@ -94,6 +112,25 @@ main:focus {
 
 /* Base selection styles that invert whatever colours are rendered */
 ::selection {
-	background: var(--color-dark);
-	color: var(--color-light);
+	background-color: var(--color-text);
+	color: var(--color-bg);
+}
+
+.preload-transitions * {
+	transition: none !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	html:focus-within {
+		scroll-behavior: auto;
+	}
+
+	*,
+	::after,
+	::before {
+		animation-duration: 0.01ms !important;
+		animation-iteration-count: 1 !important;
+		scroll-behavior: auto !important;
+		transition-duration: 0.01ms !important;
+	}
 }
