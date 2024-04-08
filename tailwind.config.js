@@ -1,145 +1,145 @@
-/**
- * Tailwind creates utility classes on demand.
- * The values for the design system are set in _resources/design-tikens.
- *
- */
 
-const plugin = require('tailwindcss/plugin');
-const postcss = require('postcss');
-const postcssJs = require('postcss-js');
+/* © Andy Bell - https://buildexcellentwebsit.es/ */
 
-const clampGenerator = require('./_resources/css-utils/clamp-generator.js');
-const tokensToTailwind = require('./_resources/css-utils/tokens-to-tailwind.js');
+import plugin from 'tailwindcss/plugin';
+import postcss from 'postcss';
+import postcssJs from 'postcss-js';
+
+import {clampGenerator} from './_resources/utils/clamp-generator.js';
+import {tokensToTailwind} from './_resources/utils/tokens-to-tailwind.js';
 
 // Raw design tokens
-const colorTokens = require('./_resources/design-tokens/colors.json');
-const fontTokens = require('./_resources/design-tokens/fonts.json');
-const spacingTokens = require('./_resources/design-tokens/spacing.json');
-const textSizeTokens = require('./_resources/design-tokens/text-sizes.json');
+import colorTokens from './_resources/design-tokens/colors.json';
+import fontTokens from './_resources/design-tokens/fonts.json';
+import spacingTokens from './_resources/design-tokens/spacing.json';
+import textSizeTokens from './_resources/design-tokens/textSizes.json';
+import textLeadingTokens from './_resources/design-tokens/textLeading.json';
+import textWeightTokens from './_resources/design-tokens/textWeights.json';
+import viewportTokens from './_resources/design-tokens/viewports.json';
 
 // Process design tokens
 const colors = tokensToTailwind(colorTokens.items);
 const fontFamily = tokensToTailwind(fontTokens.items);
 const fontSize = tokensToTailwind(clampGenerator(textSizeTokens.items));
+const fontWeight = tokensToTailwind(textWeightTokens.items);
+const fontLeading = tokensToTailwind(textLeadingTokens.items);
 const spacing = tokensToTailwind(clampGenerator(spacingTokens.items));
 
-module.exports = {
-	content: ['./*.{html,js,php,twig}'],
-	presets: [],
-	theme: {
-		extend: {
-			screens: {
-				md: '50em',
-				lg: '80em',
-			},
-			colors,
-			spacing,
-			fontSize,
-			fontFamily,
-			fontWeight: {
-				normal: 400,
-				bold: 700,
-				black: 800,
-			},
-			backgroundColor: ({ theme }) => theme('colors'),
-			textColor: ({ theme }) => theme('colors'),
-			margin: ({ theme }) => ({
-				auto: 'auto',
-				...theme('spacing'),
-			}),
-			padding: ({ theme }) => theme('spacing'),
-		},
-	},
-	variantOrder: [
-		'first',
-		'last',
-		'odd',
-		'even',
-		'visited',
-		'checked',
-		'empty',
-		'read-only',
-		'group-hover',
-		'group-focus',
-		'focus-within',
-		'hover',
-		'focus',
-		'focus-visible',
-		'active',
-		'disabled',
-	],
+export default {
+  content: ['./src/**/*.{html,js,md,njk,liquid,webc}'],
+  presets: [],
+  theme: {
+    screens: {
+      ltsm: {max: `${viewportTokens.sm}px`},
+      sm: `${viewportTokens.sm}px`,
+      md: `${viewportTokens.md}px`,
+      navigation: `${viewportTokens.navigation}px`
+    },
+    colors,
+    spacing,
+    fontFamily,
+    fontSize,
+    fontWeight,
+    fontLeading,
+    backgroundColor: ({theme}) => theme('colors'),
+    textColor: ({theme}) => theme('colors'),
+    margin: ({theme}) => ({
+      auto: 'auto',
+      ...theme('spacing')
+    }),
+    padding: ({theme}) => theme('spacing')
+  },
+  variantOrder: [
+    'first',
+    'last',
+    'odd',
+    'even',
+    'visited',
+    'checked',
+    'empty',
+    'read-only',
+    'group-hover',
+    'group-focus',
+    'focus-within',
+    'hover',
+    'focus',
+    'focus-visible',
+    'active',
+    'disabled'
+  ],
 
-	// Disables Tailwind's reset etc
-	corePlugins: {
-		preflight: false,
-	},
-	plugins: [
-		// Generates custom property values from tailwind config
-		plugin(function ({ addComponents, config }) {
-			let result = '';
+  // Disables Tailwind's reset etc
+  corePlugins: {
+    preflight: false,
+    textOpacity: false,
+    backgroundOpacity: false,
+    borderOpacity: false
+  },
 
-			const currentConfig = config();
+  // Prevents Tailwind's core components
+  blocklist: ['container'],
 
-			const groups = [
-				{ key: 'colors', prefix: 'color' },
-				{ key: 'spacing', prefix: 'space' },
-				{ key: 'fontSize', prefix: 'size' },
-				{ key: 'fontFamily', prefix: 'font' },
-			];
+  // Prevents Tailwind from generating that wall of empty custom properties
+  experimental: {
+    optimizeUniversalDefaults: true
+  },
 
-			groups.forEach(({ key, prefix }) => {
-				const group = currentConfig.theme[key];
+  plugins: [
+    // Generates custom property values from tailwind config
+    plugin(function ({addComponents, config}) {
+      let result = '';
 
-				if (!group) {
-					return;
-				}
+      const currentConfig = config();
 
-				Object.keys(group).forEach(key => {
-					result += `--${prefix}-${key}: ${group[key]};`;
-				});
-			});
+      const groups = [
+        {key: 'colors', prefix: 'color'},
+        {key: 'spacing', prefix: 'space'},
+        {key: 'fontSize', prefix: 'size'},
+        {key: 'fontLeading', prefix: 'leading'},
+        {key: 'fontFamily', prefix: 'font'},
+        {key: 'fontWeight', prefix: 'font'}
+      ];
 
-			addComponents({
-				':root': postcssJs.objectify(
-					postcss.parse(result)
-				),
-			});
-		}),
+      groups.forEach(({key, prefix}) => {
+        const group = currentConfig.theme[key];
 
-		// Generates custom utility classes
-		plugin(function ({ addUtilities, config }) {
-			const currentConfig = config();
-			const customUtilities = [
-				{
-					key: 'spacing',
-					prefix: 'flow-space',
-					property: '--flow-space',
-				},
-				{
-					key: 'colors',
-					prefix: 'spot-color',
-					property: '--spot-color',
-				},
-			];
+        if (!group) {
+          return;
+        }
 
-			customUtilities.forEach(({ key, prefix, property }) => {
-				const group = currentConfig.theme[key];
+        Object.keys(group).forEach(key => {
+          result += `--${prefix}-${key}: ${group[key]};`;
+        });
+      });
 
-				if (!group) {
-					return;
-				}
+      addComponents({
+        ':root': postcssJs.objectify(postcss.parse(result))
+      });
+    }),
 
-				Object.keys(group).forEach(key => {
-					addUtilities({
-						[`.${prefix}-${key}`]:
-							postcssJs.objectify(
-								postcss.parse(
-									`${property}: ${group[key]}`
-								)
-							),
-					});
-				});
-			});
-		}),
-	],
+    // Generates custom utility classes
+    plugin(function ({addUtilities, config}) {
+      const currentConfig = config();
+      const customUtilities = [
+        {key: 'spacing', prefix: 'flow-space', property: '--flow-space'},
+        {key: 'colors', prefix: 'spot-color', property: '--spot-color'}
+      ];
+
+      customUtilities.forEach(({key, prefix, property}) => {
+        const group = currentConfig.theme[key];
+
+        if (!group) {
+          return;
+        }
+
+        Object.keys(group).forEach(key => {
+          addUtilities({
+            [`.${prefix}-${key}`]: postcssJs.objectify(
+              postcss.parse(`${property}: ${group[key]}`)
+            )
+          });
+        });
+      });
+    })
+  ]
 };

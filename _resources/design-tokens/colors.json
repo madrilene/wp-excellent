@@ -1,34 +1,26 @@
 {
-	"title": "Colors",
-	"description": "Hex color codes that can be shared, cross-platform. They can be converted at point of usage, such as HSL for web or CMYK for print.",
-	"items": [
-		{
-			"name": "Dark",
-			"value": "#000"
-		},
-		{
-			"name": "Light",
-			"value": "#F5F5F4"
-		},
-		{
-			"name": "Light Glare",
-			"value": "#FFFFFF"
-		},
-		{
-			"name": "Primary",
-			"value": "#F6BF2A"
-		},
-		{
-			"name": "Primary Glare",
-			"value": "#FBE5AA"
-		},
-		{
-			"name": "Secondary",
-			"value": "#ca0057"
-		},
-		{
-			"name": "Secondary Glare",
-			"value": "ea99bc"
-		}
-	]
+  "title": "Colors",
+  "description": "Hex color codes that can be shared, cross-platform. They can be converted at point of usage, such as HSL for web or CMYK for print.",
+  "items": [
+    {
+      "name": "Base Dark",
+      "value": "#343434"
+    },
+    {
+      "name": "Base Light",
+      "value": "#FBFBFB"
+    },
+    {
+      "name": "Primary Highlight",
+      "value": "#dd4462"
+    },
+    {
+      "name": "Secondary Highlight",
+      "value": "#4467dd"
+    },
+    {
+      "name": "Tertiary Highlight",
+      "value": "#fbbe25"
+    }
+  ]
 }
