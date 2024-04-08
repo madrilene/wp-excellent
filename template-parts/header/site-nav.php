@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Primary nav
  *
@@ -8,17 +9,17 @@
 ?>
 
 
-<?php if ( has_nav_menu( 'primary' ) ) : ?>
+<?php if (has_nav_menu('primary')) : ?>
 
 	<?php
 	wp_nav_menu(
 		array(
 			'container'            => 'nav',
 			'container_id'         => 'primary-menu',
-			'container_class'      => 'navbar',
-			'container_aria_label' => 'Primary navigation',
-			'items_wrap'           => '<ul id="%1$s" class="%2$s" role="menu" >%3$s</ul>',
-			'menu_class'           => 'navlist',
+			'container_class'      => 'site-nav-drawer',
+			'container_aria_label' => 'Main',
+			'items_wrap'           => '<ul id="%1$s" class="%2$s" role="list" >%3$s</ul>',
+			'menu_class'           => 'cluster',
 			'theme_location'       => 'primary',
 			'li_class'             => '',
 		)
@@ -27,14 +28,17 @@
 
 	<!--  template element holding a button that needs to be injected when JavaScript is finally available. Source: https://web.dev/website-navigation/ -->
 
-<template id="burger-template">
-  <button type="button" aria-expanded="false" aria-label="Menu" aria-controls="primary-menu">
-	<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-  <path fill-rule="evenodd" d="M12 3.75a.75.75 0 01.75.75v6.75h6.75a.75.75 0 010 1.5h-6.75v6.75a.75.75 0 01-1.5 0v-6.75H4.5a.75.75 0 010-1.5h6.75V4.5a.75.75 0 01.75-.75z" clip-rule="evenodd" />
-</svg>
+	<template id="burger-template">
+		<button type="button" aria-expanded="false" aria-label="Menu" aria-controls="mainnav">
+			<span>Menu</span>
 
-  </button>
-</template>
+			<svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+				<path d="M5 12h14" />
+				<path d="M12 5v14" />
+			</svg>
+		</button>
+	</template>
+
 
 
 <?php endif; ?>
