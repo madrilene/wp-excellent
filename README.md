@@ -28,13 +28,15 @@ For production run production build and upload in your theme folder:
 - npm install
 ```
 
-## Working locally
-
-You can just work with _LocalWP_ or using browser-sync. I work with browser-sync, because any changes result in a refresh.
-
 ### Working with browser-sync
 
-Creates a dev server (browser-sync) with hot reload on **localhost:3000**, pointing to the domain created by _LocalWP_. The domain (eg "wp-excellent.local") Must be edited in scripts section of package.json.
+Creates a dev server (browser-sync) with hot reload on **localhost:3000**, pointing to the domain created by _LocalWP_. The domain (eg "wp-excellent.local", "localhost:10028", etc.) must correspond to the "site host" created by Local. Change both occurrences of "localhost:10028" in the `scripts` section of `package.json`:
+
+```json
+
+"browser-sync": "browser-sync start --proxy \"localhost:10028\" --host=\"localhost:10028\" --no-inject-changes --files=\"./\"",
+
+```
 
 I might change that in the future, as LocalWP now offers hot [reload out of the box](https://localwp.com/help-docs/local-features/instant-reload/). But for now it only watches wp-content/plugins and wp-content/themes for changes to .css files.
 
