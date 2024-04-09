@@ -1,0 +1,38 @@
+.comments {
+	--flow-space: var(--space-l);
+	background-color: var(--color-bg-accent);
+	padding-block: var(--space-l-xl);
+}
+
+.comments .comment-meta {
+	font-size: var(--size-step-min-1);
+}
+
+/* replicating sidebar layout */
+.comments .comment-form > p:not(:first-child):not(:last-child) {
+	display: flex;
+	flex-wrap: wrap;
+	gap: var(--gutter, var(--space-s-l));
+}
+
+.comments .comment-form > p:not(:first-child):not(:last-child) > :first-child {
+	flex-basis: 10ch;
+	flex-grow: 1;
+}
+
+.comments .comment-form > p:not(:first-child):not(:last-child) > :last-child {
+	flex-basis: 0;
+	flex-grow: 999;
+	min-inline-size: var(--sidebar-content-min-width, 50%);
+}
+
+.comments .comment-form textarea,
+input {
+	background-color: var(--color-bg);
+	color: var(--color-text);
+}
+
+.comments .comment-form input[type='checkbox'] {
+	max-height: 2rem;
+	background-color: var(--color-bg);
+}
