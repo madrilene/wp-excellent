@@ -19,9 +19,9 @@
 	"scripts": {
 		"css": "npx postcss _resources/css/global.css -o css/global.css",
 		"js": "esbuild --bundle _resources/js/app.js --outdir=js --platform=node --tree-shaking=true",
-		"browser-sync": "browser-sync start --proxy \"localhost:10033\" --host=\"localhost:10033\" --no-inject-changes --files '**/*.php, **/*.css, **/*.js --ignore 'node_modules/**/*'",
-		"start": "cross-env NODE_ENV=development concurrently \"npm run browser-sync\" \"npm run css -- --watch\" \"npm run js -- --watch\"",
-		"production": "cross-env NODE_ENV=production concurrently \"npm run css -- --postcss --minify \" \"npm run js -- --minify\""
+		"browser-sync": "browser-sync start --proxy 'localhost:10033' --host 'localhost:10033' --no-inject-changes --files '**/*.php, **/*.css, **/*.js' --ignore 'node_modules/**/*'",
+		"start": "cross-env NODE_ENV=development concurrently 'npm run browser-sync --config browser-sync.config.js' 'npm run css -- --watch' 'npm run js -- --watch'",
+		"production": "cross-env NODE_ENV=production concurrently 'npm run css -- --postcss --minify' 'npm run js -- --minify'"
 	},
 	"dependencies": {
 		"tailwindcss": "^3.0.23"
