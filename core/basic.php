@@ -117,6 +117,3 @@ require get_template_directory() . '/core/inc/block-patterns.php';
 
 // Block Styles.
 require get_template_directory() . '/core/inc/block-styles.php';
-
-// Comment template
-require get_template_directory() . '/core/inc/comment_template.php';
