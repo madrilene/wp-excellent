@@ -27,7 +27,7 @@
 		"tailwindcss": "^3.0.23"
 	},
 	"devDependencies": {
-		"@wordpress/eslint-plugin": "^18.0.0",
+		"@wordpress/eslint-plugin": "^18.1.0",
 		"autoprefixer": "^10.4.19",
 		"browser-sync": "^3.0.2",
 		"concurrently": "^8.2.2",
