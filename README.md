@@ -9,6 +9,7 @@ Requires **Node ≥ 22**.
 - [wp-excellent](#wp-excellent)
      - [Contents](#contents)
      - [Install](#install)
+     - [Editor](#editor)
      - [Develop](#develop)
      - [Design tokens](#design-tokens)
      - [Gutenberg blocks](#gutenberg-blocks)
@@ -21,9 +22,33 @@ Requires **Node ≥ 22**.
 ```bash
 npm install
 npm run production
+composer install
 ```
 
 Built assets land in `dist/` (CSS, front JS, Gutenberg bundles) — not committed. Run a production build after clone before activating the theme.
+
+`composer install` pulls WordPress stubs for Intelephense (IDE only; not needed at runtime).
+
+## Editor
+
+Use [PHP Intelephense](https://marketplace.visualstudio.com/items?itemName=bmewburn.vscode-intelephense-client) for PHP language support in Cursor / VS Code.
+
+After `composer install`, WordPress core functions (`the_title`, `esc_url`, …) resolve via stubs.
+Recommended settings for [`.vscode/settings.json`](.vscode/settings.json) so Intelephense can load them (the stubs file is larger than Intelephense’s default max size):
+
+```json
+{
+	"[php]": {
+		"editor.defaultFormatter": "bmewburn.vscode-intelephense-client"
+	},
+	"intelephense.files.maxSize": 6000000,
+	"intelephense.environment.includePaths": [
+		"vendor/php-stubs/wordpress-stubs"
+	]
+}
+```
+
+Open the **theme folder** as the workspace root so those settings apply. Then reload the window or run **Intelephense: Index workspace**.
 
 ## Develop
 

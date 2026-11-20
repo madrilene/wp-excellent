@@ -1,0 +1,13 @@
+{
+	"name": "madrilene/wp-excellent",
+	"description": "WordPress starter theme based on Eleventy Excellent",
+	"type": "wordpress-theme",
+	"license": "MIT",
+	"require": {},
+	"require-dev": {
+		"php-stubs/wordpress-stubs": "^6.8"
+	},
+	"config": {
+		"sort-packages": true
+	}
+}
