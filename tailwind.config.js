@@ -26,7 +26,13 @@ const fontLeading = tokensToTailwind(textLeadingTokens.items);
 const spacing = tokensToTailwind(clampGenerator(spacingTokens.items));
 
 export default {
-  content: ['./src/**/*.{html,js,md,njk,liquid,webc}'],
+  content: [
+    './**/*.{php,html}',
+    './_resources/js/**/*.js',
+    './_resources/blocks/**/*.js',
+    '!./node_modules/**',
+    '!./vendor/**'
+  ],
   presets: [],
   theme: {
     screens: {
