@@ -1,69 +1,97 @@
 # wp-excellent
 
-Starter for classic PHP WordPress theme.
-Based on the workflow suggested by Andy Bell's https://buildexcellentwebsit.es/.
+Classic PHP WordPress starter using the [buildexcellentwebsit.es](https://buildexcellentwebsit.es/) workflow: Cube CSS, Every Layout, Utopia design tokens, and constrained Tailwind utilities. Sibling of [eleventy-excellent](https://github.com/madrilene/eleventy-excellent).
+
+Requires **Node ≥ 22**.
 
 ## Contents
 
-- [Using this](#using-this)
+- [Install](#install)
+- [Develop](#develop)
+- [Design tokens](#design-tokens)
+- [Gutenberg blocks](#gutenberg-blocks)
+- [Production build](#production-build)
+- [Deploy](#deploy)
 - [Credits](#credits)
 
-## Using this
+## Install
 
-Edit CSS and JS in `_resources`. Fonts and images in `assets`.
-For production run production build and upload in your theme folder:
-
-- assets
-- core
-- css
-- js
-- template-parts
-- Wordpress PHP files
-- screenshot.jpg
-- style.css
-
-## Install dependencies
-
-```
-- npm install
+```bash
+npm install
 ```
 
-### Working with browser-sync
+## Develop
 
-Creates a dev server (browser-sync) with hot reload on **localhost:3000**, pointing to the domain created by _LocalWP_. The domain (eg "wp-excellent.local", "localhost:10028", etc.) must correspond to the "site host" created by Local. Change both occurrences of "localhost:10028" in the `scripts` section of `package.json`:
+Edit CSS/JS under `_resources`. Fonts and images live in `assets`.
 
-```json
+`npm start` runs browser-sync (proxy your LocalWP host), PostCSS watch, esbuild watch, and the Gutenberg blocks watcher.
 
-"browser-sync": "browser-sync start --proxy \"localhost:10028\" --host=\"localhost:10028\" --no-inject-changes --files=\"./\"",
+Point both host values in the `browser-sync` script in `package.json` at your Local site (e.g. `localhost:10033`).
 
-```
-
-I might change that in the future, as LocalWP now offers hot [reload out of the box](https://localwp.com/help-docs/local-features/instant-reload/). But for now it only watches wp-content/plugins and wp-content/themes for changes to .css files.
-
-```
+```bash
 npm start
 ```
 
-## Creating a production build
+## Design tokens
 
+JSON tokens live in `_resources/design-tokens/`.
+
+Generate the full palette from `colorsBase.json`:
+
+```bash
+npm run colors
 ```
+
+Then rebuild CSS (`npm run css` or via `npm start`). Light/dark themes use `data-theme` plus `prefers-color-scheme` in `_resources/css/global/variables.css`.
+
+## Gutenberg blocks
+
+Dynamic SSR blocks follow this pattern (same idea as client themes built on this starter):
+
+1. Editor source: `_resources/blocks/*.js` (entry `index.js`)
+2. Build: `npm run build:blocks` → `blocks/index.js` + `blocks/index.asset.php`
+3. Register in `core/inc/blocks.php` with `register_block_type` + `render_callback`
+4. Markup: `template-parts/blocks/`
+5. Styles: `_resources/css/blocks/` (picked up by the global CSS glob)
+
+Sample block: **Callout** (`wpexcellent/callout`) in the Theme category.
+
+```bash
+npm run dev:blocks    # watch
+npm run build:blocks  # production
+```
+
+To add another block: create `_resources/blocks/my-block.js`, import it from `index.js`, register + render in PHP, add a template part and CSS file.
+
+ACF JSON can still live under `_config/acf-json` for page fields — this is not an ACF-blocks setup.
+
+## Production build
+
+```bash
 npm run production
 ```
 
+Runs minified CSS, minified front JS, and `build:blocks`.
+
+## Deploy
+
+Upload these from the theme folder:
+
+- `assets/`
+- `blocks/`
+- `core/`
+- `css/`
+- `js/`
+- `template-parts/`
+- WordPress PHP templates (`*.php` at theme root)
+- `screenshot.jpg`
+- `style.css`
+- `site.webmanifest`
+
+Do not upload `_resources/`, `node_modules/`, or config-only files unless you need them on the server.
+
 ## Credits
 
-**Andy Bell**
-Andy recently came up an approach that incorporates Tailwind CSS into his methodology.
-
-- https://cube.fyi/
-- https://buildexcellentwebsit.es/
-
-**Heydon Pickering**
-I really like Heydon's approaches and recommend reading his books.
-
-- https://every-layout.dev/
-- https://inclusive-components.design/
-
-**Tailwind**
-
-- https://tailwindcss.com/
+**Andy Bell** — Cube / buildexcellentwebsit.es  
+**Heydon Pickering** — Every Layout, inclusive components  
+**Tailwind CSS** — utility generation bridged to design tokens  
