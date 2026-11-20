@@ -21,6 +21,8 @@
  */
 function setup()
 {
+	load_theme_textdomain('wp-excellent', get_template_directory() . '/languages');
+
 	register_nav_menus(
 		array(
 			'primary' => __('Primary Menu', 'wp-excellent'),
@@ -49,6 +51,7 @@ function setup()
 			'style',
 			'script',
 			'navigation-widgets',
+			'search-form',
 		)
 	);
 
@@ -64,8 +67,13 @@ function setup()
 		 *
 		 * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
 		 */
-
 	add_theme_support('post-thumbnails');
+
+	add_theme_support('wp-block-styles');
+	add_theme_support('responsive-embeds');
+	add_theme_support('align-wide');
+	add_theme_support('editor-styles');
+	add_editor_style('css/global.css');
 }
 
 add_action('after_setup_theme', 'setup');
@@ -80,9 +88,12 @@ function enqueue_scripts()
 {
 	$theme = wp_get_theme();
 
-	// theme base.
 	wp_enqueue_style('global', asset('css/global.css'), array(), $theme->get('Version'));
-	wp_enqueue_script('app', asset('js/app.js'), array(), $theme->get('Version'), true);
+
+	// Theme toggle in head to set data-theme before paint when possible.
+	wp_enqueue_script('theme-toggle', asset('js/theme-toggle.js'), array(), $theme->get('Version'), false);
+	wp_enqueue_script('nav-drawer', asset('js/nav-drawer.js'), array(), $theme->get('Version'), true);
+	wp_enqueue_script('card-link', asset('js/card-link.js'), array(), $theme->get('Version'), true);
 }
 
 add_action('wp_enqueue_scripts', 'enqueue_scripts');
@@ -112,8 +123,5 @@ require get_template_directory() . '/core/inc/acf.php';
 // Custom template tags for the theme.
 require get_template_directory() . '/core/inc/template-tags.php';
 
-// Block Patterns.
-require get_template_directory() . '/core/inc/block-patterns.php';
-
-// Block Styles.
-require get_template_directory() . '/core/inc/block-styles.php';
+// Gutenberg dynamic blocks.
+require get_template_directory() . '/core/inc/blocks.php';

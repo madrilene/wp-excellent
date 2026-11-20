@@ -29,6 +29,7 @@
 </head>
 
 <body <?php body_class(); ?>>
+	<?php wp_body_open(); ?>
 
 	<a href="#main" class="skip-link | button"> <?php esc_html_e('Jump to main content', 'wp-excellent'); ?></a>
 
