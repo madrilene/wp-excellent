@@ -15,8 +15,9 @@
 
 <footer class="site-foot">
 
-	<div class=" wrapper">
+	<div class="wrapper flow">
 
+		<?php get_template_part('template-parts/footer/theme', 'switch'); ?>
 		<?php get_template_part('template-parts/footer/footer', 'credit'); ?>
 
 	</div>
