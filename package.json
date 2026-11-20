@@ -26,23 +26,23 @@
 		"production": "cross-env NODE_ENV=production concurrently 'npm run css' 'npm run js -- --minify' 'npm run build:blocks'"
 	},
 	"dependencies": {
-		"colorjs.io": "^0.5.2",
+		"colorjs.io": "^0.7.1",
 		"tailwindcss": "^3.4.17"
 	},
 	"devDependencies": {
-		"@wordpress/eslint-plugin": "^21.0.0",
+		"@wordpress/eslint-plugin": "^28.2.0",
 		"@wordpress/scripts": "^30.27.0",
-		"autoprefixer": "^10.4.19",
-		"browser-sync": "^3.0.2",
-		"concurrently": "^9.0.1",
-		"cross-env": "^7.0.3",
-		"cssnano": "^7.0.1",
-		"esbuild": "^0.23.1",
-		"eslint": "^9.10.0",
-		"postcss": "^8.4.8",
-		"postcss-cli": "^11.0.0",
-		"postcss-import": "^16.1.0",
-		"postcss-js": "^4.0.0",
-		"slugify": "^1.6.5"
+		"autoprefixer": "^10.7.0",
+		"browser-sync": "^3.0.4",
+		"concurrently": "^10.0.7",
+		"cross-env": "^10.1.0",
+		"cssnano": "^9.9.0",
+		"esbuild": "^0.28.2",
+		"eslint": "^10.15.0",
+		"postcss": "^8.5.33",
+		"postcss-cli": "^12.0.0",
+		"postcss-import": "^17.0.1",
+		"postcss-js": "^5.1.1",
+		"slugify": "^1.6.9"
 	}
 }
