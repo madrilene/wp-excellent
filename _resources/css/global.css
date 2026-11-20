@@ -1,16 +1,15 @@
-@import 'tailwindcss/base';
+@import 'tailwindcss/base' layer(tailwindBase);
 
-@import 'global/reset.css';
-@import 'global/fonts.css';
+@import 'global/reset.css' layer(reset);
+@import 'global/fonts.css' layer(fonts);
 
-@import 'tailwindcss/components';
+@import 'tailwindcss/components' layer(tailwindComponents);
 
-@import 'global/variables.css';
-@import 'global/global-styles.css';
+@import 'global/variables.css' layer(variables);
+@import 'global/global-styles.css' layer(global);
 
-@import-glob 'blocks/*.css';
-/* @import-glob 'components/*.css'; */
-@import-glob 'compositions/*.css';
-@import-glob 'utilities/*.css';
+@import 'compositions/*.css' layer(compositions);
+@import 'blocks/*.css' layer(blocks);
+@import 'utilities/*.css' layer(utilities);
 
-@import 'tailwindcss/utilities';
+@import 'tailwindcss/utilities' layer(tailwindUtilities);
