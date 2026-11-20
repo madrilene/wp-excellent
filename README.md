@@ -26,7 +26,7 @@ Edit CSS/JS under `_resources`. Fonts and images live in `assets`.
 
 `npm start` runs browser-sync (proxy your LocalWP host), PostCSS watch, esbuild watch, and the Gutenberg blocks watcher.
 
-Point both host values in the `browser-sync` script in `package.json` at your Local site (e.g. `localhost:10033`).
+`npm start` proxies via Local’s `sites.json` (auto-detects this site’s nginx port). Start the site in Local first.
 
 ```bash
 npm start
