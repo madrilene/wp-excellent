@@ -73,7 +73,7 @@ function setup()
 	add_theme_support('responsive-embeds');
 	add_theme_support('align-wide');
 	add_theme_support('editor-styles');
-	add_editor_style('css/global.css');
+	add_editor_style('dist/css/global.css');
 }
 
 add_action('after_setup_theme', 'setup');
@@ -88,12 +88,12 @@ function enqueue_scripts()
 {
 	$theme = wp_get_theme();
 
-	wp_enqueue_style('global', asset('css/global.css'), array(), $theme->get('Version'));
+	wp_enqueue_style('global', asset('dist/css/global.css'), array(), $theme->get('Version'));
 
 	// Theme toggle in head to set data-theme before paint when possible.
-	wp_enqueue_script('theme-toggle', asset('js/theme-toggle.js'), array(), $theme->get('Version'), false);
-	wp_enqueue_script('nav-drawer', asset('js/nav-drawer.js'), array(), $theme->get('Version'), true);
-	wp_enqueue_script('card-link', asset('js/card-link.js'), array(), $theme->get('Version'), true);
+	wp_enqueue_script('theme-toggle', asset('dist/js/theme-toggle.js'), array(), $theme->get('Version'), false);
+	wp_enqueue_script('nav-drawer', asset('dist/js/nav-drawer.js'), array(), $theme->get('Version'), true);
+	wp_enqueue_script('card-link', asset('dist/js/card-link.js'), array(), $theme->get('Version'), true);
 }
 
 add_action('wp_enqueue_scripts', 'enqueue_scripts');

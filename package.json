@@ -17,10 +17,10 @@
 	"license": "MIT",
 	"scripts": {
 		"colors": "node _resources/utils/create-colors.js",
-		"css": "npx postcss _resources/css/global.css -o css/global.css",
-		"js": "esbuild --bundle _resources/js/*.js --outdir=js --platform=browser --tree-shaking=true",
-		"dev:blocks": "wp-scripts start _resources/blocks/index.js --output-path=blocks",
-		"build:blocks": "wp-scripts build _resources/blocks/index.js --output-path=blocks",
+		"css": "mkdir -p dist/css && npx postcss _resources/css/global.css -o dist/css/global.css",
+		"js": "esbuild --bundle _resources/js/*.js --outdir=dist/js --platform=browser --tree-shaking=true",
+		"dev:blocks": "wp-scripts start _resources/blocks/index.js --output-path=dist/blocks",
+		"build:blocks": "wp-scripts build _resources/blocks/index.js --output-path=dist/blocks",
 		"browser-sync": "node _resources/utils/browser-sync-local.js",
 		"start": "cross-env NODE_ENV=development concurrently 'npm run browser-sync' 'npm run css -- --watch' 'npm run js -- --watch' 'npm run dev:blocks'",
 		"production": "cross-env NODE_ENV=production concurrently 'npm run css' 'npm run js -- --minify' 'npm run build:blocks'"

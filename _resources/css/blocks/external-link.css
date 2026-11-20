@@ -13,7 +13,7 @@ article
 	display: inline-block;
 	inline-size: 1em;
 	block-size: 1em;
-	background-image: url('../assets/images/external.svg');
+	background-image: url('../../assets/images/external.svg');
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: 60% auto;

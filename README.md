@@ -6,27 +6,30 @@ Requires **Node ≥ 22**.
 
 ## Contents
 
-- [Install](#install)
-- [Develop](#develop)
-- [Design tokens](#design-tokens)
-- [Gutenberg blocks](#gutenberg-blocks)
-- [Production build](#production-build)
-- [Deploy](#deploy)
-- [Credits](#credits)
+- [wp-excellent](#wp-excellent)
+     - [Contents](#contents)
+     - [Install](#install)
+     - [Develop](#develop)
+     - [Design tokens](#design-tokens)
+     - [Gutenberg blocks](#gutenberg-blocks)
+     - [Production build](#production-build)
+     - [Deploy](#deploy)
+     - [Credits](#credits)
 
 ## Install
 
 ```bash
 npm install
+npm run production
 ```
+
+Built assets land in `dist/` (CSS, front JS, Gutenberg bundles) — not committed. Run a production build after clone before activating the theme.
 
 ## Develop
 
 Edit CSS/JS under `_resources`. Fonts and images live in `assets`.
 
-`npm start` runs browser-sync (proxy your LocalWP host), PostCSS watch, esbuild watch, and the Gutenberg blocks watcher.
-
-`npm start` proxies via Local’s `sites.json` (auto-detects this site’s nginx port). Start the site in Local first.
+`npm start` runs browser-sync (proxy your LocalWP host), PostCSS watch, esbuild watch, and the Gutenberg blocks watcher. It proxies via Local’s `sites.json` (auto-detects this site’s nginx port). Start the site in Local first.
 
 ```bash
 npm start
@@ -49,7 +52,7 @@ Then rebuild CSS (`npm run css` or via `npm start`). Light/dark themes use `data
 Dynamic SSR blocks follow this pattern (same idea as client themes built on this starter):
 
 1. Editor source: `_resources/blocks/*.js` (entry `index.js`)
-2. Build: `npm run build:blocks` → `blocks/index.js` + `blocks/index.asset.php`
+2. Build: `npm run build:blocks` → `dist/blocks/index.js` + `dist/blocks/index.asset.php`
 3. Register in `core/inc/blocks.php` with `register_block_type` + `render_callback`
 4. Markup: `template-parts/blocks/`
 5. Styles: `_resources/css/blocks/` (picked up by the global CSS glob)
@@ -75,13 +78,11 @@ Runs minified CSS, minified front JS, and `build:blocks`.
 
 ## Deploy
 
-Upload these from the theme folder:
+Run `npm run production`, then upload:
 
 - `assets/`
-- `blocks/`
 - `core/`
-- `css/`
-- `js/`
+- `dist/` (generated)
 - `template-parts/`
 - WordPress PHP templates (`*.php` at theme root)
 - `screenshot.jpg`
@@ -92,6 +93,6 @@ Do not upload `_resources/`, `node_modules/`, or config-only files unless you ne
 
 ## Credits
 
-**Andy Bell** — Cube / buildexcellentwebsit.es  
-**Heydon Pickering** — Every Layout, inclusive components  
-**Tailwind CSS** — utility generation bridged to design tokens  
+**Andy Bell** — Cube / buildexcellentwebsit.es
+**Heydon Pickering** — Every Layout, inclusive components
+**Tailwind CSS** — utility generation bridged to design tokens

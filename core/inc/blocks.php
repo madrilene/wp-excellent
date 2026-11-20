@@ -3,7 +3,7 @@
 /**
  * Theme Gutenberg blocks — registration and sample callout.
  *
- * Pattern: editor JS in _resources/blocks → npm run build:blocks → blocks/
+ * Pattern: editor JS in _resources/blocks → npm run build:blocks → dist/blocks/
  * PHP register_block_type + render_callback → template-parts/blocks/
  *
  * @package wp-excellent
@@ -38,7 +38,7 @@ add_filter('block_categories_all', 'wpexcellent_register_block_category', 10, 1)
  */
 function wpexcellent_register_blocks()
 {
-	$asset_file = get_template_directory() . '/blocks/index.asset.php';
+	$asset_file = get_template_directory() . '/dist/blocks/index.asset.php';
 	$asset      = file_exists($asset_file) ? require $asset_file : array(
 		'dependencies' => array(),
 		'version'      => wp_get_theme()->get('Version'),
@@ -46,7 +46,7 @@ function wpexcellent_register_blocks()
 
 	wp_register_script(
 		'wpexcellent-blocks',
-		get_template_directory_uri() . '/blocks/index.js',
+		get_template_directory_uri() . '/dist/blocks/index.js',
 		$asset['dependencies'],
 		$asset['version'],
 		true
