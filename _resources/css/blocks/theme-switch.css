@@ -1,3 +1,9 @@
+@media (scripting: none) {
+  .theme-switch {
+    display: none;
+  }
+}
+
 .theme-switch h2 {
   font-size: var(--size-step-min-1);
   font-family: var(--font-base);
@@ -17,9 +23,9 @@
   --_color-primary-contast: color-mix(
     in oklab,
     var(--color-primary) 85%,
-    var(--color-base-dark)
+    var(--color-gray-900)
   );
   --button-bg: var(--_color-primary-contast);
-  --button-text: var(--color-base-light);
+  --button-text: var(--color-gray-100);
   --button-border: var(--_color-primary-contast);
 }
