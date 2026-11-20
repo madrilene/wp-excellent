@@ -1,45 +1,48 @@
-<?php if (have_rows('rechtsgebiete')) : ?>
-	<?php while (have_rows('rechtsgebiete')) : the_row(); ?>
+<?php
 
-		<div class="wrapper">
-			<div class="region grid" data-layout="50-50">
+/**
+ * Optional ACF split/cards component.
+ *
+ * Expects a repeater `sections` with nested `left` / `right` groups
+ * (title, content, link as post object).
+ *
+ * @package wp-excellent
+ */
 
-				<?php if (have_rows('links')) : ?>
-					<article class="card flow">
-						<?php while (have_rows('links')) : the_row(); ?>
-							<h2><?php the_sub_field('titel'); ?></h2>
-							<?php the_sub_field('inhalt'); ?>
-							<?php
-							$link_post = get_sub_field('link'); // Assuming 'link' is now set to return a Post Object
-							if ($link_post) :
-								$link_url = get_permalink($link_post->ID); // Get the URL of the linked page
-								$link_title = get_the_title($link_post->ID); // Get the title of the linked page
+if (! function_exists('have_rows') || ! have_rows('sections')) {
+	return;
+}
+
+while (have_rows('sections')) :
+	the_row();
+	?>
+	<div class="wrapper">
+		<div class="region grid" data-layout="50-50">
+			<?php
+			foreach (array('left', 'right') as $side) :
+				if (! have_rows($side)) {
+					continue;
+				}
+				?>
+				<article class="card flow">
+					<?php
+					while (have_rows($side)) :
+						the_row();
+						?>
+						<?php if (get_sub_field('title')) : ?>
+							<h2><?php the_sub_field('title'); ?></h2>
+						<?php endif; ?>
+						<?php the_sub_field('content'); ?>
+						<?php
+						$link_post = get_sub_field('link');
+						if ($link_post) :
 							?>
-								<p><a href="<?php echo esc_url($link_url); ?>"><?php echo esc_html($link_title); ?></a></p>
-							<?php endif; ?>
-						<?php endwhile; ?>
-					</article>
-				<?php endif; ?>
-
-				<?php if (have_rows('rechts')) : ?>
-					<article class="card flow">
-						<?php while (have_rows('rechts')) : the_row(); ?>
-							<h2><?php the_sub_field('titel'); ?></h2>
-							<?php the_sub_field('inhalt'); ?>
-							<?php
-							$link_post = get_sub_field('link'); // Assuming 'link' is now set to return a Post Object
-							if ($link_post) :
-								$link_url = get_permalink($link_post->ID); // Get the URL of the linked page
-								$link_title = get_the_title($link_post->ID); // Get the title of the linked page
-							?>
-								<p><a href="<?php echo esc_url($link_url); ?>"><?php echo esc_html($link_title); ?></a></p>
-							<?php endif; ?>
-						<?php endwhile; ?>
-					</article>
-				<?php endif; ?>
-
-			</div>
+							<p><a href="<?php echo esc_url(get_permalink($link_post->ID)); ?>"><?php echo esc_html(get_the_title($link_post->ID)); ?></a></p>
+						<?php endif; ?>
+					<?php endwhile; ?>
+				</article>
+			<?php endforeach; ?>
 		</div>
-
-	<?php endwhile; ?>
-<?php endif; ?>
+	</div>
+	<?php
+endwhile;

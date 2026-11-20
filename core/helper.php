@@ -62,7 +62,7 @@ add_action(
 add_action(
 	'login_head',
 	function () {
-		$url   = get_theme_file_uri('favicon.svg');
+		$url   = get_theme_file_uri('assets/images/favicons/favicon.svg');
 		$width = 200;
 
 		$styles = array(

@@ -21,7 +21,7 @@ if (post_password_required()) {
 			<?php
 			$comments_number = get_comments_number();
 			printf( // WPCS: XSS OK.
-				esc_html(_nx('One comment', '%1$s comments', $comments_number, 'comments title', 'textdomain')),
+				esc_html(_nx('One comment', '%1$s comments', $comments_number, 'comments title', 'wp-excellent')),
 				number_format_i18n($comments_number)
 			);
 			?>
@@ -38,14 +38,14 @@ if (post_password_required()) {
 		if (get_comment_pages_count() > 1 && get_option('page_comments')) :
 		?>
 			<nav id="comment-nav-below" class="navigation comment-navigation" role="navigation">
-				<h2 class="screen-reader-text"><?php esc_html_e('Comment navigation', 'textdomain'); ?></h2>
+				<h2 class="screen-reader-text"><?php esc_html_e('Comment navigation', 'wp-excellent'); ?></h2>
 				<div class="nav-links">
 					<?php
-					if ($prev_link = get_previous_comments_link(__('Older Comments', 'textdomain'))) :
+					if ($prev_link = get_previous_comments_link(__('Older Comments', 'wp-excellent'))) :
 						printf('<div class="nav-previous">%s</div>', $prev_link);
 					endif;
 
-					if ($next_link = get_next_comments_link(__('Newer Comments', 'textdomain'))) :
+					if ($next_link = get_next_comments_link(__('Newer Comments', 'wp-excellent'))) :
 						printf('<div class="nav-next">%s</div>', $next_link);
 					endif;
 					?>
@@ -59,14 +59,14 @@ if (post_password_required()) {
 	// If comments are closed and there are comments, let's leave a little note, shall we?
 	if (!comments_open() && get_comments_number() && post_type_supports(get_post_type(), 'comments')) :
 	?>
-		<p class="no-comments"><?php esc_html_e('Comments are closed.', 'textdomain'); ?></p>
+		<p class="no-comments"><?php esc_html_e('Comments are closed.', 'wp-excellent'); ?></p>
 	<?php endif; ?>
 
 	<?php
 	comment_form(array(
 		'format' => 'html5',
 		'class_container' => 'flow',
-		'class_submit' => 'asdfbutton',
+		'class_submit' => 'button',
 		'class_form' => 'comment-form | flow',
 	));
 	?>

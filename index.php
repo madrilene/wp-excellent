@@ -26,9 +26,9 @@ get_header(); ?>
 		<li>Find out more on <a href="https://buildexcellentwebsit.es/" target="_blank" rel="noreferrer noopener">https://buildexcellentwebsit.es/</a>.</li>
 		<li>Remix the original: <a href="https://glitch.com/edit/#!/remix/build-excellent-websites" target="_blank" rel="noreferrer noopener">https://glitch.com/edit/#!/remix/build-excellent-websites</a></li>
 	</ul>
-	<p>Edit your preferences in <code>_resouces/css/design-tokens/</code>.</p>
+	<p>Edit your preferences in <code>_resources/design-tokens/</code>.</p>
 
-	<p>Modify index.php and the files in the src folder to start creating your theme! Have fun!</p>
+	<p>Modify index.php and the files in <code>template-parts/</code> to start creating your theme. Have fun!</p>
 </article>
 
 <!-- delete me end -->

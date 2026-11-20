@@ -18,7 +18,7 @@
 		</header><!-- .entry-header -->
 	<?php elseif (has_post_thumbnail()) : ?>
 		<header class="entry-header alignwide">
-			<?php twenty_twenty_one_post_thumbnail(); ?>
+			<?php wpexcellent_post_thumbnail(); ?>
 		</header><!-- .entry-header -->
 	<?php endif; ?>
 
@@ -28,10 +28,10 @@
 
 	wp_link_pages(
 		array(
-			'before'   => '<nav class="page-links" aria-label="' . esc_attr__('Page', 'twentytwentyone') . '">',
+			'before'   => '<nav class="page-links" aria-label="' . esc_attr__('Page', 'wp-excellent') . '">',
 			'after'    => '</nav>',
 			/* translators: %: Page number. */
-			'pagelink' => esc_html__('Page %', 'twentytwentyone'),
+			'pagelink' => esc_html__('Page %', 'wp-excellent'),
 		)
 	);
 	?>
@@ -43,8 +43,8 @@
 			edit_post_link(
 				sprintf(
 					/* translators: %s: Post title. Only visible to screen readers. */
-					esc_html__('Edit %s', 'twentytwentyone'),
-					'<span class="screen-reader-text">' . get_the_title() . '</span>'
+					esc_html__('Edit %s', 'wp-excellent'),
+					'<span class="visually-hidden">' . get_the_title() . '</span>'
 				),
 				'<span class="edit-link">',
 				'</span>'

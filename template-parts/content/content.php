@@ -25,10 +25,10 @@
 
 		wp_link_pages(
 			array(
-				'before'   => '<nav class="page-links" aria-label="' . esc_attr__( 'Page', 'twentytwentyone' ) . '">',
+				'before'   => '<nav class="page-links" aria-label="' . esc_attr__( 'Page', 'wp-excellent' ) . '">',
 				'after'    => '</nav>',
 				/* translators: %: Page number. */
-				'pagelink' => esc_html__( 'Page %', 'twentytwentyone' ),
+				'pagelink' => esc_html__( 'Page %', 'wp-excellent' ),
 			)
 		);
 
