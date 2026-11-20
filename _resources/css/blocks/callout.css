@@ -1,0 +1,17 @@
+.callout {
+	padding: var(--space-m);
+	border: var(--stroke, 1px solid var(--color-bg-accent));
+	border-inline-start: 0.35rem solid var(--color-primary);
+	background-color: var(--color-bg-accent);
+	border-radius: var(--border-radius);
+}
+
+.callout__heading {
+	font-size: var(--size-step-1);
+	font-family: var(--font-display);
+	letter-spacing: var(--tracking);
+}
+
+.callout__body {
+	max-inline-size: 65ch;
+}
