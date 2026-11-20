@@ -1,10 +1,11 @@
 #!/usr/bin/env node
 // Proxy browser-sync to this theme's Local WP nginx port (from ~/.config/Local/sites.json)
-import { spawn } from 'node:child_process';
-import { readFileSync } from 'node:fs';
-import { homedir } from 'node:os';
+import {spawn} from 'node:child_process';
+import {readFileSync} from 'node:fs';
+import {createRequire} from 'node:module';
+import {homedir} from 'node:os';
 import path from 'node:path';
-import { fileURLToPath } from 'node:url';
+import {fileURLToPath} from 'node:url';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../..');
 const site = Object.values(
@@ -17,11 +18,14 @@ if (!port) {
 	process.exit(1);
 }
 
+const browserSync = createRequire(import.meta.url).resolve('browser-sync/dist/bin.js');
+
 console.log(`[browser-sync-local] ${site.name} → localhost:${port}`);
 
 spawn(
-	'browser-sync',
+	process.execPath,
 	[
+		browserSync,
 		'start',
 		'--proxy',
 		`localhost:${port}`,
@@ -31,5 +35,5 @@ spawn(
 		'--ignore',
 		'node_modules/**/*'
 	],
-	{stdio: 'inherit', shell: true}
+	{stdio: 'inherit'}
 ).on('exit', code => process.exit(code ?? 1));
